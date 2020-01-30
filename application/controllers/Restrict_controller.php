@@ -11,7 +11,6 @@ class Restrict_controller extends CI_Controller {
 
 	public function index()
 	{
-
 		if ($this->session->userdata("codigo_usuario")) {
 			$data = array(
 				"scripts" => array(
@@ -60,7 +59,7 @@ class Restrict_controller extends CI_Controller {
 				$codigo_usuario = $result->codigo_usuario;
 				$senha_usuario_hash = $result->senha_usuario_hash;
 				if (password_verify($password, $senha_usuario_hash)) {
-					$this->session->set_userdata("codigo_usuario", $codigo_usuario);
+					$this->session->userdata("codigo_usuario", $codigo_usuario);
 				} else {
 					$json["status"] = 0;
 				}
@@ -71,17 +70,13 @@ class Restrict_controller extends CI_Controller {
 				$json["error_list"]["#btn_login"] = "Usuário e/ou senha incorretos!";
 			}
 		}
-	
 		echo json_encode($json);
-	
 	}
 
 	public function restrict_view(){
-
 		$this->load->view('template/header');
 		$this->load->view('template/scripts');
 		$this->load->view("restrict_view");
 		$this->load->view('template/footer');
-
 	}
 }
