@@ -20,4 +20,8 @@ class usuario_model extends CI_model {
             return NULL;
         }
     }
+
+    public function inserir_usuario_no_banco(){
+        
+    }
 } 
