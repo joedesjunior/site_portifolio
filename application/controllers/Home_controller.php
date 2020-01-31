@@ -13,8 +13,7 @@ class Home_controller extends CI_Controller {
 			),
 			"codigo_usuario" => $this->session->userdata("codigo_usuario")
 		);
-
 		$this->template->show("home_view.php", $data);
-
 	}
+	
 }

@@ -31,14 +31,16 @@ class Restrict_controller extends CI_Controller {
 		}
 	}
 
-	public function logoff(){
+	public function logoff()
+	{
 		$this->session->sess_destroy();
 		header("Location: " . base_url() . "restrict_controller");
 	}
 
 	public function ajax_login() {
 
-		if (!$this->input->is_ajax_request()) {
+		if (!$this->input->is_ajax_request()) 
+		{
 			exit("Nenhum acesso de script direto permitido!");
 		}
 	
@@ -73,10 +75,13 @@ class Restrict_controller extends CI_Controller {
 		echo json_encode($json);
 	}
 
-	public function restrict_view(){
+	public function restrict_view()
+	{
 		$this->load->view('template/header');
 		$this->load->view('template/scripts');
 		$this->load->view("restrict_view");
 		$this->load->view('template/footer');
+		
 	}
+
 }

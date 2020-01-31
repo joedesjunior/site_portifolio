@@ -1,5 +1,4 @@
 <?php
-
 class usuario_model extends CI_model {
     
     public function __construct() {
@@ -16,12 +15,8 @@ class usuario_model extends CI_model {
 
         if ($result->num_rows() > 0) {
             return $result->row();
-        } else {
+            } else {
             return NULL;
         }
-    }
-
-    public function inserir_usuario_no_banco(){
-        
     }
 } 
